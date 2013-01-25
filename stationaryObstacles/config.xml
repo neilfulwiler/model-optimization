@@ -1,0 +1,62 @@
+<DOCUMENT>
+  <simulator>
+    <time>
+      <end>10</end>
+      <exit_at_end>true</exit_at_end>
+    </time>
+
+<!--    <visualization type="viewer3D" size=".6" position=".1;.1" dt="1e-2" attachTo="">
+      <ground size="600;1200"/>
+      <camera position="-.4;0;3" yaw="1.57" pitch=".6"/>
+      <origin_visible>false</origin_visible>
+      <far_distance>1000</far_distance>
+
+      <path_marks step="1" color="0;0;0" agents="a1"/>
+    </visualization> -->
+  </simulator>
+
+  <virtual_world>
+
+    <environment>
+      <include_xml>${SIMULATOR_DIR}/models/parameters/model_parameters.xml</include_xml>
+      <reference_angle>0</reference_angle>
+
+      <units length_unit="cm" angular_unit="degree" time_unit="s"/>
+    </environment>
+
+    <model id="main">
+
+      <object id="o1" type="pole" color=".1;1;.1">
+	<position type="relative" reference="a1" bearing="-1" distance="1000"/>
+      </object>
+      <object id="o2" type="pole" color="1;.1;.1">
+	<position type="relative" reference="a1" bearing="-6" distance="200"/>
+      </object>
+      <object id="o3" type="pole" color="1;.1;.1">
+	<position type="relative" reference="a1" bearing="8" distance="400"/>
+      </object>
+      <object id="o4" type="pole" color="1;.1;.1">
+	<position type="relative" reference="a1" bearing="-2" distance="600"/>
+      </object>
+      
+      <agent id="a1">
+	<position>0;50</position>
+	<heading_angle init="noisy" std_deviation=".2">90</heading_angle>
+	<step>.1</step>
+	<color>1;.1;.1</color>
+
+	<behavior name="locomotionModel">
+	  <activity dt="1.666e-2"/> <!-- dt=.016-->
+	  <method>rungekutta</method>
+	  <interactions>
+	    <object id="o1" type="target"/>
+	    <object ids="o2;o3;o4" type="obstacle"/>
+	  </interactions>
+	</behavior>
+
+      </agent>
+
+    </model>
+  </virtual_world>
+
+</DOCUMENT>

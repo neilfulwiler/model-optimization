@@ -1,0 +1,22 @@
+given parameters (default)
+
+stationaryGoal
+	bg 3.25
+	kg 7.5
+	c1 .4
+	c2 .4
+      
+stationaryObstacle
+	ko 198
+	c3 6.5
+	c4 1.6
+      
+moving target
+	bm 10
+	km 5
+      
+moving obstacle
+	kmo 530
+	c5 6
+	c6 .8
+

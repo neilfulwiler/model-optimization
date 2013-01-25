@@ -1,0 +1,45 @@
+% - init the genetic algorithm
+% - load the data (the human data, take one set-up)
+% - run the genetic algorithm using the objective
+%	function test.m
+
+% understand better the topology of the parameter space
+% and how its being explored by the genetic algorithm
+
+% using two algorithms in parallel
+
+% first optimize the model on given inputs to the model, 
+% trying to find them again
+
+% using the average over a number of participants/trials
+% on a single setup
+
+% optimizing kg, c1, c2
+
+% line-search algorithm (don't lose your time)
+
+% the other approach is a systematic approach, 'paving'
+% the parameter space and checking each intersection, 
+% then running the genetic algorithm at each found local
+% minimum
+
+% kg 1<100(0)
+% c1 .1<8 (same with c2)
+
+
+% step1 (confirmation) in competition, what happens
+% step2 (complementary) they work together, find local minima
+% 	with systematic, then initialize the genetic
+% 	algorithm in those areas
+
+
+% ask Stephane on Friday if I have any questions
+% play with systematic algorithm until I get the genetic
+% algorithm
+x = lsqnonlin( fun, x0, lb, ub )
+
+
+5 < kg < 8
+.2 < c1 < .8
+.2 < c2 < .6
+
